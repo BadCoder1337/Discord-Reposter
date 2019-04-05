@@ -14,13 +14,13 @@ client.on("ready", function() {
 });
 
 let config = {
-	replacements: JSON.parse(process.env.REPLACEMENTS || {}),
-	nicknames: JSON.parse(process.env.NICKNAMES || {}),
-	prefixes: JSON.parse(process.env.PREFIXES || {}),
-	active: JSON.parse(process.env.ACTIVE || {}),
-	tags: JSON.parse(process.env.TAGS || {}),
-	pins: JSON.parse(process.env.PINS || {}),
-	live: JSON.parse(process.env.LIVE || {}),
+	replacements: JSON.parse(process.env.REPLACEMENTS || "{}"),
+	nicknames: JSON.parse(process.env.NICKNAMES || "{}"),
+	prefixes: JSON.parse(process.env.PREFIXES || "{}"),
+	active: JSON.parse(process.env.ACTIVE || "{}"),
+	tags: JSON.parse(process.env.TAGS || "{}"),
+	pins: JSON.parse(process.env.PINS || "{}"),
+	live: JSON.parse(process.env.LIVE || "{}"),
 };
 
 function updateJson() {
