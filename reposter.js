@@ -6,7 +6,7 @@ const fs = require("fs");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-client.login("<SECRET_BOT_TOKEN>").catch(console.error);
+client.login(process.env.DISCORD_TOKEN).catch(console.error);
 
 client.on("ready", function() {
 	client.user.setActivity(client.guilds.size + " server" + (client.guilds.size === 1 ? "" : "s"), { type: "WATCHING" }).catch(console.error);
@@ -14,13 +14,13 @@ client.on("ready", function() {
 });
 
 let config = {
-	replacements: {},
-	nicknames: {},
-	prefixes: {},
-	active: {},
-	tags: {},
-	pins: {},
-	live: {}
+	replacements: JSON.parse(process.env.REPLACEMENTS || {}),
+	nicknames: JSON.parse(process.env.NICKNAMES || {}),
+	prefixes: JSON.parse(process.env.PREFIXES || {}),
+	active: JSON.parse(process.env.ACTIVE || {}),
+	tags: JSON.parse(process.env.TAGS || {}),
+	pins: JSON.parse(process.env.PINS || {}),
+	live: JSON.parse(process.env.LIVE || {}),
 };
 
 function updateJson() {
