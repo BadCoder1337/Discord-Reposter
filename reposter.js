@@ -9,9 +9,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 http.createServer(function (req, res) {
-	res.writeHead(301, {
-	  'Location': 'https://github.com/BadCoder1337',
-	});
+	res.writeHead(200);
 	res.end();
 }).listen(port, function() {
 	console.log("Listening on " + port);
