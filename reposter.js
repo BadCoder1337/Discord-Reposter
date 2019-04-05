@@ -9,7 +9,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 http.createServer(function (req, res) {
-	res.writeHead(200);
+	res.write('RST');
 	res.end();
 }).listen(port, function() {
 	console.log("Listening on " + port);
